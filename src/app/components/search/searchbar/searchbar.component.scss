@@ -1,0 +1,37 @@
+.input-wrapper {
+  position: relative;
+  margin: 25px 0;
+}
+
+input {
+  border: 1px solid #40484d;
+  border-radius: 25px;
+  background-color: #434e54;
+  padding: 5px 3%;
+  width: 100%;
+  color: #f3f5f7;
+
+  &.search-field {
+    &:focus-visible {
+      border-color: #434e54;
+      outline: none;
+    }
+  }
+}
+
+.input-search,
+.input-times {
+  color: #f3f5f7;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-search {
+  left: 1%;
+}
+
+.input-times {
+  right: 1%;
+}

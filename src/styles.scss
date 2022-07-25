@@ -1,0 +1,40 @@
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html,
+body {
+  font-family: 'Proxima Nova', Roboto, Ubuntu, serif;
+  background: #4a555b;
+  color: #f3f5f7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+}
+
+.page-item {
+  text-align: center;
+}
+
+.page-item.disabled .page-link {
+  background-color: #434e54;
+  border-color: #40484d;
+}
+.page-link {
+  color: #f3f5f7;
+  background-color: #434e54;
+  border-color: #40484d;
+  width: 50px;
+
+  &:hover {
+    background-color: #4a555b;
+    border-color: #40484d;
+    color: #f3f5f7;
+  }
+}
+
+.page-item.active .page-link {
+  background-color: #4669fb;
+  border-color: #40484d;
+  color: #f3f5f7;
+}

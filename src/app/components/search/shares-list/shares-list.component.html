@@ -1,0 +1,35 @@
+<div class="investment-table">
+  <div class="investment-table-heading">
+    <div class="investment-table-heading--header">Symbol</div>
+    <div class="investment-table-heading--header">Name</div>
+    <div class="investment-table-heading--header">Preis</div>
+  </div>
+
+  <div *ngIf="assets$ | async as assets; else indicator" class="investment-table-body">
+    <div *ngFor="let asset of assets | slice: (page-1) * pageSize : page * pageSize; let i=index">
+      <div routerLink="/aktie/{{ asset.symbol }}" *ngIf="searchText === ''
+           || asset.symbol.toLowerCase().includes(searchText.toLowerCase())
+           || asset.name.toLowerCase().includes(searchText.toLowerCase())"
+           class="investment-table-row">
+        <div class="investment-table-row--content">{{ asset.symbol }}</div>
+        <div class="investment-table-row--content">{{ asset.name }}</div>
+        <div class="investment-table-row--content">$ {{ asset.lastPrice | number : '.2-2' : 'de-DE'}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination-container">
+    <ngb-pagination class="pagination"
+                    [(page)]="page"
+                    [pageSize]="pageSize"
+                    [rotate]="true"
+                    [boundaryLinks]="true"
+                    [maxSize]="5"
+                    (pageChange)="updatePrices()"
+                    [collectionSize]="collectionSize">
+    </ngb-pagination>
+  </div>
+  <ng-template #indicator>
+    <app-loading-indicator></app-loading-indicator>
+  </ng-template>
+</div>
+

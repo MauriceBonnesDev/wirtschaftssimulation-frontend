@@ -1,0 +1,55 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e1e;
+  padding: .5rem .7rem;
+  font-size: .8rem;
+}
+
+.footer-container-item {
+  width: 33%;
+  display: inline-block;
+  text-align: center;
+}
+.footer-container-item:first-child {
+  text-align: start;
+  padding-left: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-brand {
+  color: #f3f5f7;
+}
+.footer-item {
+  list-style: none;
+}
+
+.footer-item:not(:first-child)::before {
+  content: '/';
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #f3f5f7;
+  padding: .5rem;
+}
+
+.footer-link:last-child {
+  padding-right: 0;
+}
+
+.footer-link:hover {
+  color: #ffff00;
+}
+
+// Kleinere Schrift ab 1250px ???
+@media only screen and (max-width: 1250px) {
+  * {
+    font-size: .6rem;
+  }
+}

@@ -1,0 +1,21 @@
+
+<div class="investment-table">
+  <h2>Investments</h2>
+  <div class="investment-table-heading">
+    <div class="investment-table-heading--header">Symbol</div>
+<!--    <div class="investment-table-heading&#45;&#45;header">Name</div>-->
+    <div class="investment-table-heading--header">Kaufpreis</div>
+    <div class="investment-table-heading--header">Anzahl</div>
+    <div class="investment-table-heading--header">Aktueller Anlagewert</div>
+  </div>
+
+  <div class="investment-table-body">
+    <div *ngFor="let stock of stocks" class="investment-table-row">
+      <div class="investment-table-row--content">{{ stock.symbol }}</div>
+<!--      <div class="investment-table-row&#45;&#45;content">{{ stock.name }}</div>-->
+      <div class="investment-table-row--content">{{ stock.purchasePrice }}</div>
+      <div class="investment-table-row--content">{{ stock.quantity }}</div>
+      <div class="investment-table-row--content">$ {{ stock.quantity * 1000.24 | number : '.2-2' : 'de-DE'}}</div>
+    </div>
+  </div>
+</div>

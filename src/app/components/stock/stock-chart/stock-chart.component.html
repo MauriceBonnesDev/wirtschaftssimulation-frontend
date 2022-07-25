@@ -1,0 +1,10 @@
+<div id="chart"></div>
+<a (click)="initHistoricalChartData(symbol, '1Min')"
+   class="btn"
+   [ngClass]="timeframe === '1Min' ? 'active' : ''">1 Min</a>
+<a (click)="initHistoricalChartData(symbol, '5Min')"
+   class="btn"
+   [ngClass]="timeframe === '5Min' ? 'active' : ''">5 Min</a>
+<a (click)="initHistoricalChartData(symbol, '1hour')"
+   class="btn"
+   [ngClass]="timeframe === '1hour' ? 'active' : ''">1 Hour</a>

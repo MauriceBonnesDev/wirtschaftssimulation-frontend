@@ -1,0 +1,28 @@
+<div class="container">
+  <app-portfolio-heading [budget]="portfolio.budget"></app-portfolio-heading>
+  <div class="chart-container">
+    <div class="container-left">
+      <app-portfolio-chart *ngIf="chartVisible" ></app-portfolio-chart>
+      <app-portfolio-pie-chart
+        *ngIf="pieChartVisible"
+        [stocks]="portfolio.stocks"
+      ></app-portfolio-pie-chart>
+    </div>
+    <div class="container-right">
+      <div class="button-area">
+        <a class="btn"
+           (click)="toggleChart()"
+           [ngClass]="chartVisible ? 'active' : ''">
+          Liniendiagramm
+        </a>
+        <a class="btn"
+           (click)="togglePieChart()"
+           [ngClass]="pieChartVisible ? 'active' : ''">
+          Kreisdiagramm
+        </a>
+      </div>
+    </div>
+  </div>
+  <app-portfolio-investments [stocks]="portfolio.stocks"></app-portfolio-investments>
+</div>
+

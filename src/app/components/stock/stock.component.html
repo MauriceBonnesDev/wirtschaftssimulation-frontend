@@ -1,0 +1,4 @@
+<h1>Aktie: {{ this.symbol }}</h1>
+<app-stock-chart [symbol]="symbol"></app-stock-chart>
+<app-stock-overview></app-stock-overview>
+<a (click)="goBack()" class="btn">Go Back</a>

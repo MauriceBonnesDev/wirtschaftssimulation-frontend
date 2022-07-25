@@ -1,0 +1,16 @@
+<nav>
+  <div class="navigation">
+    <a class="navbar-brand">Trade</a>
+    <ul class="nav"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [ngClass]="{ 'dropdown-open': menuDropdownOpen }">
+      <li class="nav-item"><a (click)="toggleMenu()" class="nav-link" routerLink="/">Portfolio</a></li>
+      <li class="nav-item"><a (click)="toggleMenu()" class="nav-link" routerLink="/suche">Suche</a></li>
+      <li class="nav-item"><a (click)="toggleMenu()" class="nav-link" routerLink="/empfehlungen">KI-Empfehlungen</a></li>
+    </ul>
+    <div class="menu-btn" (click)="toggleMenu()" [class.open]="menuOpen">
+      <div class="menu-btn--burger"></div>
+    </div>
+  </div>
+</nav>

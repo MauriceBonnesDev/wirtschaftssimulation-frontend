@@ -1,0 +1,36 @@
+.investment-table {
+  margin: 25px auto;
+
+  &-heading,
+  &-row {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &-heading {
+    background-color: #434e54;
+
+    &--header {
+      min-width: 15%;
+    }
+  }
+
+  &-row {
+    transition: .3s ease-in-out;
+    border-bottom: 1px solid #40484d;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #434e54;
+    }
+
+    &--content {
+      min-width: 15%;
+    }
+  }
+}
+
+

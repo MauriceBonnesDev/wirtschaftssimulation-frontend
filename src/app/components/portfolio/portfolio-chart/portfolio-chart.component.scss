@@ -1,0 +1,43 @@
+.chart-area {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#chart {
+  display: inline-block;
+  position: relative;
+  left: 0;
+}
+
+.floating-tooltip-2 {
+  width: 96px;
+  height: 300px;
+  position: absolute;
+  display: none;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #20262E;
+  background-color: rgba(255, 255, 255, 0.27);
+  text-align: left;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 4px 4px 0 0;
+  border-bottom: none;
+  box-shadow: 0 2px 5px 0 rgba(117, 134, 150, 0.45);
+}
+
+.button-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1250px) {
+  .button-area {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    margin: auto;
+  }
+}

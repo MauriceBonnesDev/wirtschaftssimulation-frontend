@@ -1,0 +1,127 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e1e;
+  padding: 0 30px;
+  height: 48px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+}
+
+.nav.dropdown-open {
+  top: 47px;
+  visibility: visible;
+  z-index: 2;
+  opacity: 1;
+  max-height: 1000px;
+  transition: all .5s ease-in-out, opacity 1s ease-in-out, visibility 1s ease-in-out, max-height .5s ease-in-out;
+}
+
+.navbar-brand {
+  color: #f3f5f7;
+}
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #f3f5f7;
+  padding: 15px;
+}
+
+.nav-link:last-child {
+  padding-right: 0;
+}
+
+.nav-link:hover {
+  color: #ffff00;
+}
+
+.menu-btn {
+  position: relative;
+  display: none;
+  width: 15px;
+  height: 15px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.menu-btn--burger {
+  width: 15px;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #f3f5f7;
+  transition: .5s ease-in-out;
+}
+
+.menu-btn--burger::before,
+.menu-btn--burger::after {
+  content: '';
+  width: 15px;
+  height: 1px;
+  border-radius: 5px;
+  background-color: #f3f5f7;
+  position: absolute;
+  transition: .5s ease-in-out;
+}
+
+.menu-btn--burger::before {
+  transform: translateY(-.28rem);
+}
+
+.menu-btn--burger::after {
+  transform: translateY(.28rem);
+}
+
+/* Animation */
+
+.menu-btn.open .menu-btn--burger {
+  transform: translateX(-50px);
+  background-color: transparent;
+}
+
+.menu-btn.open .menu-btn--burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn--burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+// Burger menu ab 1250px
+@media only screen and (max-width: 1250px) {
+  .menu-btn {
+    display: flex;
+    z-index: 3;
+  }
+
+  .nav {
+    background-color: #1e1e1e;
+    z-index: 2;
+    padding-left: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    width: 192px;
+    max-height: 25px;
+    transition: all .4s ease-in-out, max-height .5s ease-in-out;
+  }
+
+  .nav-item {
+    padding: 15px;
+  }
+}
